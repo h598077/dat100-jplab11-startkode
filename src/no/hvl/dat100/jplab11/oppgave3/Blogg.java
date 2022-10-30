@@ -2,51 +2,99 @@ package no.hvl.dat100.jplab11.oppgave3;
 
 import no.hvl.dat100.jplab11.common.TODO;
 import no.hvl.dat100.jplab11.oppgave1.*;
+import no.hvl.dat100.jplab11.oppgave2.*;
 
-public class Blogg {
+public class Blogg  {
 
-	private Innlegg[] tab;
-	private int nestLedig;
+	private Innlegg[] innleggtabell;
+	private int nesteLedige;
 
 	public Blogg() {
-		
+		innleggtabell  =new Innlegg[20];
+		nesteLedige=0;
 	}
 
 	public Blogg(int lengde) {
-		tab =new Innlegg[lengde];
-		nestLedig=0;
+		innleggtabell  =new Innlegg[lengde];
+		nesteLedige=0;
 	}
 
 	public int getAntall() {
-		return tab.length;
+		return nesteLedige;
 	}
 	
 	public Innlegg[] getSamling() {
-		return tab;
+		return innleggtabell ;
 
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		boolean funnet = false;
+		int pos = 0;
+
+		while (pos < nesteLedige && !funnet) {
+			if (innleggtabell [pos].getId() == innlegg.getId()) {
+				funnet = true;
+			} else {
+				pos++;
+			}
+		}
+			
+			if (funnet) {
+				return pos;
+			} else {
+				return -1; // betyr ant ansNr ikkje finst i tabell
+			}
+		
+		
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		int pos = finnInnlegg(innlegg);
+		if (pos >= 0) {
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
+		if(nesteLedige<innleggtabell.length) {
+			return true;
+		} else {
+			return false;
+		}
+		
+		
 
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
+		boolean ny = finnInnlegg(innlegg) == -1;
 
-		throw new UnsupportedOperationException(TODO.method());
+		if (ny && nesteLedige < innleggtabell .length) {
+			innleggtabell [nesteLedige] = innlegg;
+			nesteLedige++;
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+	String a=""+getAntall()+"\n";
+	for(int i=0;i<nesteLedige;i++) {
+		a = a+innleggtabell[i];
+	}
+		
+	System.out.println(a);
+	return a;
+		
+		
+		
+		
 	}
 
 	// valgfrie oppgaver nedenfor

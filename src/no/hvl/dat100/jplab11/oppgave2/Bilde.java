@@ -34,8 +34,9 @@ public class Bilde extends Tekst {
 
 	@Override
 	public String toString() {
+		
+String a ="BILDE"+"\n"+super.getId()+"\n"+super.getBruker()+"\n" +super.getDato()+"\n"+super.getLikes()+"\n"+this.getTekst()+"\n"+this.url;
 
-String a ="";
 return a;
 
 	}

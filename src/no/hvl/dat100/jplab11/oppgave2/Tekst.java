@@ -37,7 +37,8 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		String tekst = "TEKST"+"\n"+super.getId()+"\n"+super.getBruker()+"\n"+super.getDato()+"\n"+super.getLikes()+"\n"+this.getTekst()+"\n";
+		return tekst;
 
 	}
 	
