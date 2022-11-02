@@ -43,8 +43,9 @@ return a;
 
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		String a="";
+		String a="\t\t<h2>"+getBruker()+"@"+getDato()+" ["+ getLikes() +"]"+"</h2>"+"\r\n"+"\t\t<p>"+getTekst()+"</p>"+"\r\n"+"\t\t<iframe src="+this.url+" height=800 width=800></iframe><hr>";
 		return a;
 				
 	}
 }
+

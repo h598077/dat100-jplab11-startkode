@@ -94,8 +94,9 @@ public abstract class Innlegg {
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		String a ="";
+		String a ="test";
 		return a;
 				
 	}
+
 }
