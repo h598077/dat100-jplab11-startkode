@@ -1,1 +1,1 @@
-# dat100-jplab12-startkode
+# Java Programmeringsoppgave 3 Gruppe (20)
